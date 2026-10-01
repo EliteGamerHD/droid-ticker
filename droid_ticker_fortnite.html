@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fortnite Droid Tycoon Ticker</title>
+  <style>
+    :root {
+      --bg1: #060914;
+      --bg2: #121c38;
+      --bg3: #1b0d33;
+      --line1: #57e7ff;
+      --line2: #9a5cff;
+      --main: #ffffff;
+      --cyan: #7dfbff;
+      --purple: #b16cff;
+      --yellow: #ffd24d;
+      --shadow-dark: rgba(0,0,0,.75);
+      --glow-cyan: rgba(87,231,255,.6);
+      --glow-purple: rgba(154,92,255,.5);
+      --height: 84px;
+      --speed: 24s;
+    }
+
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: transparent;
+      font-family: Impact, Haettenschweiler, 'Arial Black', Arial, sans-serif;
+    }
+
+    .ticker-shell {
+      position: relative;
+      width: 100%;
+      height: var(--height);
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(87,231,255,.12) 0%, transparent 8%, transparent 92%, rgba(154,92,255,.12) 100%),
+        linear-gradient(90deg, var(--bg1) 0%, var(--bg2) 45%, var(--bg3) 100%);
+      border-top: 3px solid var(--line1);
+      border-bottom: 3px solid var(--line2);
+      box-shadow:
+        0 0 24px rgba(0,0,0,.55) inset,
+        0 0 15px rgba(87,231,255,.25),
+        0 0 15px rgba(154,92,255,.25);
+    }
+
+    .ticker-shell::before,
+    .ticker-shell::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 84px;
+      height: 100%;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .ticker-shell::before {
+      left: 0;
+      background: linear-gradient(90deg, rgba(6,9,20,1), rgba(6,9,20,0));
+    }
+
+    .ticker-shell::after {
+      right: 0;
+      background: linear-gradient(270deg, rgba(27,13,51,1), rgba(27,13,51,0));
+    }
+
+    .track {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      white-space: nowrap;
+      padding-left: 100%;
+      will-change: transform;
+      animation: ticker var(--speed) linear infinite;
+    }
+
+    .content {
+      display: inline-block;
+      white-space: nowrap;
+      font-size: 31px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--main);
+      text-shadow:
+        -2px -2px 0 var(--shadow-dark),
+         2px -2px 0 var(--shadow-dark),
+        -2px  2px 0 var(--shadow-dark),
+         2px  2px 0 var(--shadow-dark),
+         0 0 10px var(--glow-cyan),
+         0 0 20px var(--glow-purple);
+    }
+
+    .cyan { color: var(--cyan); }
+    .purple { color: var(--purple); }
+    .yellow { color: var(--yellow); }
+    .divider {
+      display: inline-block;
+      padding: 0 22px;
+      color: var(--yellow);
+    }
+
+    @keyframes ticker {
+      0%   { transform: translate(0, -50%); }
+      100% { transform: translate(-100%, -50%); }
+    }
+  </style>
+</head>
+<body>
+  <div class="ticker-shell">
+    <div class="track">
+      <div class="content">
+        <span class="cyan">🤖 JOIN THE DISCORD DROID COMMUNITY</span>
+        <span class="divider">◆</span>
+        <span>NEW DROID EVENTS EVERY WEEKEND</span>
+        <span class="divider">◆</span>
+        <span class="purple">FOLLOW @TDUDZAK</span>
+        <span class="divider">◆</span>
+        <span>USE CREATOR CODE <span class="yellow">ELITEGAMERHD</span></span>
+        <span class="divider">◆</span>
+        <span class="cyan">BUILD • TRADE • SAVE DROIDS</span>
+        <span class="divider">◆</span>
+        <span class="purple">DISCORD FOR GUIDES • EVENTS • REBIRTH HELP</span>
+        <span class="divider">◆</span>
+        <span>JOIN THE DISCORD DROID COMMUNITY</span>
+        <span class="divider">◆</span>
+        <span class="cyan">NEW DROID EVENTS EVERY WEEKEND</span>
+        <span class="divider">◆</span>
+        <span class="purple">FOLLOW @TDUDZAK</span>
+        <span class="divider">◆</span>
+        <span>USE CREATOR CODE <span class="yellow">ELITEGAMERHD</span></span>
+        <span class="divider">◆</span>
+        <span class="cyan">BUILD • TRADE • SAVE DROIDS</span>
+        <span class="divider">◆</span>
+        <span class="purple">DISCORD FOR GUIDES • EVENTS • REBIRTH HELP</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
